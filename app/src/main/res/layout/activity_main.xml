@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jarvis_dark"
+    android:padding="16dp">
+
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/tvHeader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/title_jarvis"
+        android:textColor="@color/jarvis_cyan"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/btnSettings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SETTINGS"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/jarvis_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Status Banner -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/status_ready"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeader" />
+
+    <!-- Central Arc Reactor / HUD visual placeholder -->
+    <View
+        android:id="@+id/arcReactorView"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:background="@drawable/ic_launcher_background"
+        android:backgroundTint="@color/jarvis_cyan"
+        android:alpha="0.3"
+        app:layout_constraintBottom_toTopOf="@+id/scrollLogs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStatus" />
+
+    <!-- Console Log Display -->
+    <ScrollView
+        android:id="@+id/scrollLogs"
+        android:layout_width="0dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/jarvis_card"
+        android:padding="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnToggleStream"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvLogs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="[Mark-LIV Engine Initialized]\nWaiting for voice stream..."
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:fontFamily="monospace" />
+    </ScrollView>
+
+    <!-- Main Live Toggle -->
+    <Button
+        android:id="@+id/btnToggleStream"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/jarvis_cyan"
+        android:text="@string/btn_listen"
+        android:textColor="@color/jarvis_dark"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnPushToTalk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Push-To-Talk Button -->
+    <Button
+        android:id="@+id/btnPushToTalk"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/jarvis_blue"
+        android:text="🎤 HOLD TO SPEAK (PUSH-TO-TALK)"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+// android_project/build.gradle.kts — Top-level build file
+plugins {
+    id("com.android.application") version "8.2.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
+    id("com.chaquo.python") version "15.0.1" apply false
+}
+
+tasks.register<Delete>("clean") {
+    delete(rootProject.layout.buildDirectory)
+}

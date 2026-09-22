@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mark-LIV</string>
+    <string name="title_jarvis">MARK-LIV // JARVIS</string>
+    <string name="status_ready">STATUS: READY</string>
+    <string name="btn_listen">CONNECT LIVE STREAM</string>
+    <string name="btn_wake_word">WAKE WORD: ON</string>
+    <string name="btn_dashboard">OPEN DASHBOARD</string>
+</resources>
