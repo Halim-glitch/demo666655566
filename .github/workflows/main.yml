@@ -20,20 +20,17 @@ jobs:
 
       - name: Install System Build Dependencies
         run: |
+          sudo dpkg --add-architecture i386
           sudo apt-get update
+
           sudo apt-get install -y --no-install-recommends \
             build-essential \
             git \
             ccache \
-            libncurses5:i386 \
-            libstdc++6:i386 \
-            libgtk2.0-0:i386 \
-            libpangox-1.0-0:i386 \
-            libpangoxft-1.0-0:i386 \
-            libidn11:i386 \
             zip \
             zlib1g:i386 \
-            zlib1g-dev \
+            libstdc++6:i386 \
+            libncurses5:i386 \
             libssl-dev \
             libffi-dev \
             autoconf \
